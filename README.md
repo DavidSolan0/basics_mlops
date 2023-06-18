@@ -12,6 +12,6 @@ The components and the packages of components depicted in the previous image are
 2. In the data preprocessing the versioned artifacts are created.
 3. The model training doesn't overfit and returns the expected artifacts (e.g., confusion matrix, scores, metrics, and so on.)
 4. The workflow logic works properly.
-5. The model registry creates the new model version artifacts when corresponds.
+5. The model registry creates the new model version artifacts when corresponding.
 6. The model publishing creates the model artifacts in the production enviroment.
-7. Data drift and concept drift triggers the CT when corresponds.
+7. Data drift and concept drift triggers the CT when corresponding.
