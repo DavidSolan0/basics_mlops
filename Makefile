@@ -1,4 +1,4 @@
-.PHONY: setup install_dependencies run_pipeline
+.PHONY: setup install_dependencies test_pipeline
 
 setup:
     python -m venv .venv
