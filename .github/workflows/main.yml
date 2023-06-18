@@ -1,0 +1,35 @@
+name: MLflow CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11.4
+    
+      - name: Create venv
+        run: |
+            make setup
+
+      - name: Install dependencies
+        run: |
+            make install_dependencies
+
+      - name: Format code with Python black
+        run: |
+            make format
+    
+      - name: Test with Pytest
+        run: |
+            make test_pipeline
