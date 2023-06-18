@@ -7,7 +7,7 @@ from sklearn.utils import shuffle
 from data.utils import create_path
 
 
-def collect_data(num_instances, output_dir):
+def collect_data(num_instances, model_name, output_dir):
     # Load the famous iris dataset
     iris = load_iris()
     data = pd.DataFrame(data=iris.data, columns=iris.feature_names)
@@ -20,7 +20,7 @@ def collect_data(num_instances, output_dir):
     data = data.iloc[:num_instances]
 
     # Create the output directory if it doesn't exist
-    output_path = os.path.join("data", output_dir)
+    output_path = os.path.join("data", model_name, output_dir)
     os.makedirs(output_path, exist_ok=True)
     print(f"Collection Output path:", output_path)
 

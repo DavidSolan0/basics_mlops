@@ -1,13 +1,14 @@
 import os
 import pandas as pd
+from joblib import dump
 from sklearn.preprocessing import MinMaxScaler
 
 from data.utils import create_path
 
 
-def preprocess_data(input_dir, output_dir):
+def preprocess_data(input_dir, model_name, output_dir):
     # Load the raw data
-    input_path = os.path.join("data", input_dir)
+    input_path = os.path.join("data", model_name, input_dir)
     input_file = create_path(folder=input_path, name="raw")
     data = pd.read_csv(input_file)
 
@@ -30,7 +31,7 @@ def preprocess_data(input_dir, output_dir):
     data_scaled["target"] = target
 
     # Create the output directory if it doesn't exist
-    output_path = os.path.join("data", output_dir)
+    output_path = os.path.join("data", model_name, output_dir)
     os.makedirs(output_path, exist_ok=True)
     print(f"Preprocessing Output path:", output_path)
 
@@ -38,3 +39,7 @@ def preprocess_data(input_dir, output_dir):
     output_file = create_path(folder=output_path, name="preprocessed")
     print(f"Preprocessing Output file:", output_file)
     data_scaled.to_csv(output_file, index=False)
+
+    # Save scaler
+    scaler_path = os.path.join(output_path, "scaler.pickle")
+    dump(scaler, scaler_path)
