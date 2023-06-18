@@ -64,7 +64,7 @@ class CICDTest:
 
 
 test = CICDTest(model_name="test")
-test.test_collect_data(num_instances=20, output_dir="bronze")
+test.test_collect_data(num_instances=30, output_dir="bronze")
 test.test_preprocess_data(input_dir="bronze", output_dir="silver")
 test.test_split_data(input_dir="silver", output_dir="golden", test_size=0.2)
 test.test_model_training()
