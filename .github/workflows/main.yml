@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - mlops-project-requirement
 
 jobs:
   build:
