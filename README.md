@@ -57,5 +57,14 @@ You'll be able to view your excecutions, track metrics and save artifacts to run
 ## FUTURE WORK
 
 * Data versioning with DVC and AWS S3. 
-* Model tracking with MLFlow and AWS S3.
+* Model registry and tracking with MLFlow and AWS S3.
 * Scalability improvements working in a AWS EC2 instance instead of a local workspace.
+
+### Data versioning with DVC
+
+DVC will create a cache tracking with GitHub to identify the code changes that imply data modifications. We can link a remote with AWS S3 where the files will be stored to share across teams. Thus we avoid loading large files into GitHub but are still able to find the desired versions to run tests and compare models and code versions.
+
+### Model Registry and Tracking
+
+The idea is to create a pipeline that allows to reproduce the MLFlow experiments and based on statistical hypothesis systems or bootstrap procedures define if a new run should be registered as a new model version into production. The model artifacts folder then can be uploaded into an S3 bucket in AWS to share across teams and execute remotely. 
+
