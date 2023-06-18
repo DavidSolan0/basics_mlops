@@ -1,12 +1,12 @@
 import os
 import shutil
 import pandas as pd
-from data.utils import create_path
-from data.data_collection import collect_data
-from data.data_preprocessing import preprocess_data
-from data.data_splitting import split_data
-from model.model_training import train_model
-from model_tracking.utils import create_experiment_id
+from src.data.utils import create_path
+from src.data.data_collection import collect_data
+from src.data.data_preprocessing import preprocess_data
+from src.data.data_splitting import split_data
+from src.model.model_training import train_model
+from src.model_tracking.utils import create_experiment_id
 
 
 class CICDTest:
