@@ -6,7 +6,7 @@ from model_tracking.utils import create_experiment_id
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Data Collection")
-    parser.add_argument("--model_name", type=str, default="iris", help="Model name")
+    parser.add_argument("--model_name", type=str, required=True, help="Model name")
     parser.add_argument(
         "--num_instances",
         type=int,
@@ -29,4 +29,4 @@ if __name__ == "__main__":
 
     # Training
     print("Starting model training")
-    train_model(args.model_name, experiment_id)
+    train_model(model_name=args.model_name, experiment_id=experiment_id)

@@ -11,17 +11,17 @@ from model.utils import load_dataset
 
 def train_model(model_name, experiment_id):
     # Load the train data from the "golden" folder
-    train_dict = load_dataset(model_name, "train")
+    train_dict = load_dataset(model_name=model_name, set_name="train")
     X_train = train_dict["features"]
     y_train = train_dict["target"]
 
     # Load the test data from the "golden" folder
-    test_dict = load_dataset(model_name, "test")
+    test_dict = load_dataset(model_name=model_name, set_name="test")
     X_test = test_dict["features"]
     y_test = test_dict["target"]
 
     # Load the valid data from the "golden" folder
-    valid_dict = load_dataset(model_name, "valid")
+    valid_dict = load_dataset(model_name=model_name, set_name="valid")
     X_valid = valid_dict["features"]
     y_valid = valid_dict["target"]
 
