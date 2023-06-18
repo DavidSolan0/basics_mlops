@@ -54,6 +54,8 @@ You'll be able to view your excecutions, track metrics and save artifacts to run
 
 ![image](https://github.com/DavidSolan0/basics_mlops/assets/80591909/75cae4ec-a66c-4a94-9e9b-fed9b4c5e24a)
 
-## PENDING WORK
+## FUTURE WORK
 
-
+* Data versioning with DVC and AWS S3. 
+* Model tracking with MLFlow and AWS S3.
+* Scalability improvements working in a AWS EC2 instance instead of a local workspace.
