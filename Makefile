@@ -1,19 +1,14 @@
-.PHONY: setup install_dependencies test_pipeline
-
-setup:
-    python -m venv .venv
-    . .venv/bin/activate
-    pip install --upgrade pip
-
 install_dependencies:
-    . .venv/bin/activate
-    pip install -r requirements.txt
+	pip install --upgrade pip && \
+		pip install -r requirements.txt
 
 format:
 	black *.py
 
+lint:
+	pylint src
+
 test_pipeline:
-    . .venv/bin/activate
-    python pytest -m test_workflow.py
+	python -m pytest -vv test_workflow.py
 
-
+all: install_dependencies lint test_pipeline
