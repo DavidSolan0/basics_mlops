@@ -64,7 +64,11 @@ You'll be able to view your executions, track metrics, and save artifacts to run
 
 DVC will create a cache tracking with GitHub to identify the code changes that imply data modifications. We can link a remote with AWS S3 where the files will be stored to share across teams. Thus we avoid loading large files into GitHub but are still able to find the desired versions to run tests and compare models and code versions.
 
-To get an idea of what would be the expected result I created a remote with DVC in Google Drive [here](https://github.com/DavidSolan0/basics_mlops/blob/mlops-project-requirement/data.dvc) you have the cache file how it would look like and [here](https://github.com/DavidSolan0/basics_mlops/blob/mlops-project-requirement/.dvc/config) the remote configuration. For more details please follow this [link](https://dvc.org/doc/start/data-management/data-versioning?tab=Windows-Cmd-)
+To get an idea of what would be the expected result I created a remote with DVC in Google Drive [here](https://github.com/DavidSolan0/basics_mlops/blob/mlops-project-requirement/data.dvc) you have the cache file how it would look like and [here](https://github.com/DavidSolan0/basics_mlops/blob/mlops-project-requirement/.dvc/config) the remote configuration. For more details please follow this [link](https://dvc.org/doc/start/data-management/data-versioning?tab=Windows-Cmd-). Once you have configured your remote and pushed the data you can see these folders in your respective remote path:
+
+![image](https://github.com/DavidSolan0/basics_mlops/assets/80591909/5961dfac-73ae-4067-ba6f-cb5d1859fce4)
+
+Using these hash codes you will be able to track your data changes with GitHub and DVC.
 
 ### Model Registry and Tracking
 
