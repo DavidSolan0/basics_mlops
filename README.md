@@ -1,3 +1,5 @@
+[![Python 3.11](https://github.com/DavidSolan0/basics_mlops/actions/workflows/main.yml/badge.svg)](https://github.com/DavidSolan0/basics_mlops/actions/workflows/main.yml)
+
 # MLops-Basics
 This repo contains the code, images, and documentation to run a basic MLOps pipeline.
 
