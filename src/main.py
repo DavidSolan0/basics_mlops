@@ -5,7 +5,7 @@ from model_tracking.utils import create_experiment_id
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Data Collection")
+    parser = argparse.ArgumentParser(description="CT")
     parser.add_argument("--model_name", type=str, required=True, help="Model name")
     parser.add_argument(
         "--num_instances",
