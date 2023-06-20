@@ -18,7 +18,7 @@ The components and the packages of components depicted in the previous image are
 
 ## Project Execution
 ### Virtual Enrivoment
-Create a conda environment by running
+Create a python virtual environment by running
 ```
 python -m venv venv
 ```
