@@ -6,9 +6,9 @@ from sklearn.model_selection import train_test_split
 from data.utils import create_path
 
 
-def split_data(input_dir, output_dir, test_size):
+def split_data(input_dir, model_name, output_dir, test_size):
     # Load the data
-    input_path = os.path.join("data", input_dir)
+    input_path = os.path.join("data", model_name, input_dir)
     input_file = create_path(folder=input_path, name="preprocessed")
     data = pd.read_csv(input_file)
 
@@ -17,7 +17,7 @@ def split_data(input_dir, output_dir, test_size):
     test_data, valid_data = train_test_split(test_data, test_size=0.5, random_state=42)
 
     # Create the output directory if it doesn't exist
-    output_path = os.path.join("data", output_dir)
+    output_path = os.path.join("data", model_name, output_dir)
     os.makedirs(output_path, exist_ok=True)
     print(f"Splitting Output path:", output_path)
 

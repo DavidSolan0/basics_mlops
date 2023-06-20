@@ -1,0 +1,38 @@
+name: MLflow CI/CD Pipeline
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11.4
+
+      - name: Install dependencies
+        run: |
+            make install_dependencies
+      
+      - name: Lint with Pylint
+        run: |
+            make lint
+    
+      - name: Test with Pytest
+        run: |
+            make test_pipeline
+
+      - name: Format code with Python black
+        run: |
+            make format
+
